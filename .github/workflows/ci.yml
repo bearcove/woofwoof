@@ -12,7 +12,7 @@ env:
 
 jobs:
   test-linux:
-    runs-on: depot-ubuntu-24.04-16
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
@@ -30,7 +30,7 @@ jobs:
         run: cargo test --verbose
 
   test-macos:
-    runs-on: depot-macos-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
         with:
@@ -48,7 +48,7 @@ jobs:
         run: cargo test --verbose
 
   test-windows:
-    runs-on: depot-windows-2022
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
         with:
@@ -64,7 +64,7 @@ jobs:
         run: cargo test --verbose
 
   clippy:
-    runs-on: depot-ubuntu-24.04-8
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
@@ -81,7 +81,7 @@ jobs:
         run: cargo clippy --all-targets -- -D warnings
 
   fmt:
-    runs-on: depot-ubuntu-24.04-4
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -94,7 +94,7 @@ jobs:
         run: cargo fmt --all -- --check
 
   docs:
-    runs-on: depot-ubuntu-24.04-8
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
