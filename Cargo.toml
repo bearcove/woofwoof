@@ -10,6 +10,20 @@ documentation = "https://docs.rs/woofwoof"
 keywords = ["font", "woff2", "compression", "brotli", "opentype"]
 categories = ["compression", "parsing"]
 readme = "README.md"
+include = [
+    "src/**/*",
+    "build.rs",
+    "include/**/*",
+    "wrapper/**/*",
+    "vendor/woff2/include/**/*",
+    "vendor/woff2/src/**/*.cc",
+    "vendor/woff2/src/**/*.h",
+    "vendor/woff2/LICENSE",
+    "Cargo.toml",
+    "LICENSE-*",
+    "README.md",
+    "CHANGELOG.md",
+]
 
 [package.metadata.docs.rs]
 all-features = true

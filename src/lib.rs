@@ -1,7 +1,21 @@
 //! WOFF2 font compression and decompression.
 //!
-//! Uses the Google woff2 C++ library for font transforms,
-//! with brotli compression provided by the pure Rust `brotli` crate.
+//! Uses Google's [woff2](https://github.com/google/woff2) C++ library for font-specific
+//! table transforms, with brotli compression provided by the pure Rust
+//! [`brotli`](https://crates.io/crates/brotli) crate.
+//!
+//! # Example
+//!
+//! ```no_run
+//! // Compress a TTF font to WOFF2
+//! let ttf_data = std::fs::read("font.ttf").unwrap();
+//! let woff2_data = woofwoof::compress(&ttf_data, "", 8, true)
+//!     .expect("compression failed");
+//!
+//! // Decompress back to TTF
+//! let ttf_again = woofwoof::decompress(&woff2_data)
+//!     .expect("decompression failed");
+//! ```
 
 mod brotli_shim;
 
