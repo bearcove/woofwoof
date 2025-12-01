@@ -76,12 +76,7 @@ Thanks to all individual sponsors:
 
 ...along with corporate sponsors:
 
-<p> <a href="https://aws.amazon.com">
-<picture>
-<source media="(prefers-color-scheme: dark)" srcset="https://github.com/fasterthanlime/woofwoof/raw/main/static/sponsors/aws-dark.svg">
-<img src="https://github.com/fasterthanlime/woofwoof/raw/main/static/sponsors/aws-light.svg" height="40" alt="AWS">
-</picture>
-</a> <a href="https://zed.dev">
+<p> <a href="https://zed.dev">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="https://github.com/fasterthanlime/woofwoof/raw/main/static/sponsors/zed-dark.svg">
 <img src="https://github.com/fasterthanlime/woofwoof/raw/main/static/sponsors/zed-light.svg" height="40" alt="Zed">
