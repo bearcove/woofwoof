@@ -23,8 +23,11 @@ typedef enum BrotliEncoderMode {
 #define BROTLI_DEFAULT_WINDOW 22
 #define BROTLI_DEFAULT_MODE BROTLI_MODE_GENERIC
 
+/* Redirect to woofwoof-prefixed symbol to avoid conflicts */
+#define BrotliEncoderCompress woofwoof_BrotliEncoderCompress
+
 /* One-shot compression - implemented in Rust */
-BROTLI_BOOL BrotliEncoderCompress(
+BROTLI_BOOL woofwoof_BrotliEncoderCompress(
     int quality,
     int lgwin,
     BrotliEncoderMode mode,

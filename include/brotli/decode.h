@@ -16,8 +16,11 @@ typedef enum {
     BROTLI_DECODER_RESULT_NEEDS_MORE_OUTPUT = 3
 } BrotliDecoderResult;
 
+/* Redirect to woofwoof-prefixed symbol to avoid conflicts */
+#define BrotliDecoderDecompress woofwoof_BrotliDecoderDecompress
+
 /* One-shot decompression - implemented in Rust */
-BrotliDecoderResult BrotliDecoderDecompress(
+BrotliDecoderResult woofwoof_BrotliDecoderDecompress(
     size_t encoded_size,
     const uint8_t* encoded_buffer,
     size_t* decoded_size,

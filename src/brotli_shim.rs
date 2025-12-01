@@ -30,7 +30,7 @@ const BROTLI_MODE_FONT: c_int = 2;
 ///     size_t* encoded_size, uint8_t* encoded_buffer);
 /// ```
 #[unsafe(no_mangle)]
-pub unsafe extern "C" fn BrotliEncoderCompress(
+pub unsafe extern "C" fn woofwoof_BrotliEncoderCompress(
     quality: c_int,
     lgwin: c_int,
     mode: c_int,
@@ -81,7 +81,7 @@ pub unsafe extern "C" fn BrotliEncoderCompress(
 ///     size_t* decoded_size, uint8_t* decoded_buffer);
 /// ```
 #[unsafe(no_mangle)]
-pub unsafe extern "C" fn BrotliDecoderDecompress(
+pub unsafe extern "C" fn woofwoof_BrotliDecoderDecompress(
     encoded_size: usize,
     encoded_buffer: *const u8,
     decoded_size: *mut usize,
