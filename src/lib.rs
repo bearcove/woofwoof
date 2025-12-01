@@ -139,6 +139,6 @@ mod tests {
         // Note: roundtripped may not be byte-identical due to font transforms,
         // but should be a valid font of similar size
         println!("Decompressed: {} bytes", roundtripped.len());
-        assert!(roundtripped.len() > 0);
+        assert!(!roundtripped.is_empty());
     }
 }

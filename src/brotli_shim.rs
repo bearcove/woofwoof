@@ -17,9 +17,8 @@ pub const BROTLI_DECODER_RESULT_ERROR: c_int = 0;
 pub const BROTLI_DECODER_RESULT_SUCCESS: c_int = 1;
 
 // BrotliEncoderMode values (must match C enum)
-pub const BROTLI_MODE_GENERIC: c_int = 0;
-pub const BROTLI_MODE_TEXT: c_int = 1;
-pub const BROTLI_MODE_FONT: c_int = 2;
+const BROTLI_MODE_TEXT: c_int = 1;
+const BROTLI_MODE_FONT: c_int = 2;
 
 /// Compress data using brotli.
 ///
@@ -49,13 +48,15 @@ pub unsafe extern "C" fn BrotliEncoderCompress(
         let max_output_size = *encoded_size;
         let output = slice::from_raw_parts_mut(encoded_buffer, max_output_size);
 
-        let mut params = BrotliEncoderParams::default();
-        params.quality = quality;
-        params.lgwin = lgwin;
-        params.mode = match mode {
-            BROTLI_MODE_TEXT => BrotliEncoderMode::BROTLI_MODE_TEXT,
-            BROTLI_MODE_FONT => BrotliEncoderMode::BROTLI_MODE_FONT,
-            _ => BrotliEncoderMode::BROTLI_MODE_GENERIC,
+        let params = BrotliEncoderParams {
+            quality,
+            lgwin,
+            mode: match mode {
+                BROTLI_MODE_TEXT => BrotliEncoderMode::BROTLI_MODE_TEXT,
+                BROTLI_MODE_FONT => BrotliEncoderMode::BROTLI_MODE_FONT,
+                _ => BrotliEncoderMode::BROTLI_MODE_GENERIC,
+            },
+            ..Default::default()
         };
 
         let mut input_cursor = std::io::Cursor::new(input);
