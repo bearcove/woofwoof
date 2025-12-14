@@ -6,6 +6,7 @@
 
 /* Output buffer for WOFF2 decompression. */
 
+#include <cstdint>
 #include <woff2/output.h>
 
 namespace woff2 {
